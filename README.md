@@ -100,18 +100,18 @@ The box plot illustrates the spread of execution times across all three objectiv
 ```
 ├── README.md
 ├── GOAL-1/
-│   ├── LOGS
+│   └── LOGS                         # Mål 1 LOGS & Scripts
 ├── GOAL-2/
-│   ├── LOGS
+│   └── LOGS                         # Mål 2 LOGS & Scripts
 ├── GOAL-3/
-│   ├── LOGS
-├── Images/
-│   ├── Topology.png                 # WAN topology diagram
-│   ├── diagram_1_framgangsgrad.png  # Success rate chart
-│   ├── diagram_3_boxplot.png        # Execution time box plot
-│   ├── mål_1.png                    # Mål 1 execution times
-│   ├── mål_2.png                    # Mål 2 execution times
-│   └── mål_3.png                    # Mål 3 execution times
+│   └── LOGS                         # Mål 3 LOGS & Scripts
+└── Images/
+    ├── Topology.png                 # WAN topology diagram
+    ├── diagram_1_framgangsgrad.png  # Success rate chart
+    ├── diagram_3_boxplot.png        # Execution time box plot
+    ├── mål_1.png                    # Mål 1 execution times
+    ├── mål_2.png                    # Mål 2 execution times
+    └── mål_3.png                    # Mål 3 execution times
 ```
 
 ---
