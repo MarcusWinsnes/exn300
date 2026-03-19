@@ -1,0 +1,43 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[2026-03-06 13:24:11] === STEP 1: FOUNDATION CONFIG STARTED ===
+[2026-03-06 13:24:41] HEAD | Step1: hostname, no ip domain-lookup, exec-timeout 60, Lo8 8.8.8.8/24, Lo11 193.10.203.11/32, Lo12 12.12.11.11/24, Gi0/0/0 trunk no shut, subif .12/.21/.14/.41 with IPs
+[2026-03-06 13:25:19] BODY | Step1: hostname, no ip domain lookup, exec-timeout 60, VRFs blue/green, VLANs 12/21/23/14/41/45, trunks Gi1/0/1(HEAD) Gi1/0/2(TAIL), SVIs with IPs, Lo2 192.168.2.2/32 blue, Lo4 172.16.4.4/32 green
+[2026-03-06 13:25:37] TAIL | Step1: hostname, no ip domain lookup, exec-timeout 60, VRFs blue/green, VLANs 23/45, trunk Gi1/0/1(BODY), SVIs with IPs, Lo3 192.168.3.3/32 blue, Lo5 172.16.5.5/32 green
+[2026-03-06 13:27:12] VERIFY | Step1 complete: All SVIs UP, trunks working, L2 connectivity verified HEAD-BODY (VLANs 12,14,21,41), BODY-TAIL (VLANs 23,45)
+[2026-03-06 13:28:37] === STEP 2: ROUTING PROTOCOLS STARTED ===
+[2026-03-06 13:34:06] STEP2 | Completed: Static routes (Req 10-12), OSPF vrf blue w/ stub area 1 (Req 20-22), EIGRP vrf green w/ stub (Req 30-32), BGP AS100 HEAD + AS65001 BODY w/ local-as 100/200 (Req 40-45), redistribution BGP->OSPF, BGP->EIGRP, aggregate-address summary-only, HEAD network/redistribute connected w/ prefix-list
+[2026-03-06 13:34:34] VERIFY | Step2: All BGP neighbors UP (HEAD: 3 peers, BODY: 3 peers), OSPF FULL/DR, EIGRP neighbor UP, Routes propagating. Known issues for Step3: 193.10.203.11 in BGP table (needs filtering), .14 preferred over .41 (needs LP/MED tuning)
+[2026-03-06 13:45:46] === STEP 3: BGP TUNING & VERIFICATION STARTED ===
+[2026-03-06 13:53:15] === STEP 3 COMPLETE: BGP tuning (LP on .41 via route-map, MED 50/.41 200/.14), 193.10.203.11 filtered from BGP, OSPF stub router (max-metric) on TAIL, capability vrf-lite enabled, all checkpoints A-E verified, configs saved ===
+[2026-03-06 14:22:32] SESSION | === CCNP SKILL EXAM 2025/26 - Step 1: L2 Foundation ===
+[2026-03-06 14:22:57] HEAD | hostname, no ip domain-lookup, exec-timeout 60, subifs .12/.21/.14/.41, Lo8/Lo11/Lo12
+[2026-03-06 14:25:24] BODY | VRFs blue/green, VLANs 12/14/21/23/41/45, trunks Gi1/0/1+Gi1/0/2, SVIs, Lo2/Lo4
+[2026-03-06 14:25:24] TAIL | VRFs blue/green, VLANs 23/45, trunk Gi1/0/1, SVIs Vlan23/45, Lo3/Lo5
+[2026-03-06 14:25:24] VERIFY | All L3 pings across VLANs successful - Step 1 COMPLETE
+[2026-03-06 14:26:13] SESSION | === Step 2: Routing Protocols + BGP ===
+[2026-03-06 14:26:31] BODY | Static: 192.168.0.0/16 Null0 (blue), 2x ECMP to 193.10.203.11 via .12.1+.21.1 (blue), 172.16.0.0/12 Null0 (green)
+[2026-03-06 14:30:10] BODY | OSPF 1 vrf blue: area 0 (Lo2), area 1 stub no-summary (Vlan23), redistribute bgp 65001 subnets
+[2026-03-06 14:30:10] TAIL | OSPF 1 vrf blue: area 1 stub (Vlan23, Lo3)
+[2026-03-06 14:31:18] BODY | EIGRP GREEN vrf green: AS100, network 172.16.45.0+Lo4, redistribute bgp 65001
+[2026-03-06 14:31:18] TAIL | EIGRP GREEN vrf green: AS100, network 172.16.45.0+Lo5, stub connected summary
+[2026-03-06 14:39:53] BODY | OSPF: area 1 nssa + vrf-lite, EIGRP: redistribute bgp, BGP 65001 with local-as
+[2026-03-06 14:39:53] HEAD | BGP 100: 3 peers up, network 8.8.8.0, redistribute connected w/ prefix-list
+[2026-03-06 14:39:53] VERIFY | TAIL-blue sees OSPF N2 routes, TAIL-green sees EIGRP EX routes
+[2026-03-06 14:41:24] VERIFY | Step 2 COMPLETE - all BGP peers up, OSPF/EIGRP redistribute working
+[2026-03-06 14:42:44] SESSION | === Step 3: Final Verification & Checkpoints ===
+[2026-03-06 14:46:14] CHECK-A | trace vrf green 192.168.3.3 src Lo5: .5->.4->.1->.2->.3 OK
+[2026-03-06 14:46:33] CHECK-B | trace vrf green 8.8.8.8 src 172.16.5.5: .5->.4->.1 via vlan41 OK
+[2026-03-06 14:46:51] CHECK-C | trace vrf green 12.12.11.11 src 172.16.5.5: .5->.4->.1 via vlan41 OK
+[2026-03-06 14:47:24] CHECK-D | HEAD: 172.16.0.0/16 best via .41(MED50). BODY-green: 8.8.8.0 best via .41(LP200) OK
+[2026-03-06 14:47:50] CHECK-E | HEAD ECMP to 192.168.2.2 via .12.2+.21.2. BODY ECMP to 193.10.203.11 via .12.1+.21.1 OK
+[2026-03-06 14:52:40] VERIFY | Full connectivity verified (excl. 193.10.203.11 and OOB)
+[2026-03-06 14:52:40] VERIFY | BGP redundancy: single green link down -> full connectivity maintained
+[2026-03-06 14:52:40] SESSION | === CCNP SKILL EXAM 2025/26 - ALL STEPS COMPLETE ===

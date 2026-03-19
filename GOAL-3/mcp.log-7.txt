@@ -1,0 +1,460 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[2026-03-05 18:59:24] HEAD | hostname HEAD
+[2026-03-05 18:59:24] HEAD | no ip domain-lookup
+[2026-03-05 18:59:24] HEAD | line con 0
+[2026-03-05 18:59:24] HEAD | exec-timeout 60 0
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | line vty 0 15
+[2026-03-05 18:59:24] HEAD | exec-timeout 60 0
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | interface GigabitEthernet0/0/0
+[2026-03-05 18:59:24] HEAD | description TRUNK-to-BODY
+[2026-03-05 18:59:24] HEAD | no ip address
+[2026-03-05 18:59:24] HEAD | no shutdown
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | interface GigabitEthernet0/0/0.12
+[2026-03-05 18:59:24] HEAD | description BLUE-Vlan12-to-Body
+[2026-03-05 18:59:24] HEAD | encapsulation dot1Q 12
+[2026-03-05 18:59:24] HEAD | ip address 192.168.12.1 255.255.255.0
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | interface GigabitEthernet0/0/0.21
+[2026-03-05 18:59:24] HEAD | description BLUE-Vlan21-to-Body
+[2026-03-05 18:59:24] HEAD | encapsulation dot1Q 21
+[2026-03-05 18:59:24] HEAD | ip address 192.168.21.1 255.255.255.0
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | interface GigabitEthernet0/0/0.14
+[2026-03-05 18:59:24] HEAD | description GREEN-Vlan14-to-Body
+[2026-03-05 18:59:24] HEAD | encapsulation dot1Q 14
+[2026-03-05 18:59:24] HEAD | ip address 172.16.14.1 255.255.255.0
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | interface GigabitEthernet0/0/0.41
+[2026-03-05 18:59:24] HEAD | description GREEN-Vlan41-to-Body
+[2026-03-05 18:59:24] HEAD | encapsulation dot1Q 41
+[2026-03-05 18:59:24] HEAD | ip address 172.16.41.1 255.255.255.0
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | interface Loopback8
+[2026-03-05 18:59:24] HEAD | description Lo8-network-statement
+[2026-03-05 18:59:24] HEAD | ip address 8.8.8.8 255.255.255.0
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | interface Loopback11
+[2026-03-05 18:59:24] HEAD | description Lo11-hidden-not-advertised
+[2026-03-05 18:59:24] HEAD | ip address 193.10.203.11 255.255.255.255
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | interface Loopback12
+[2026-03-05 18:59:24] HEAD | description Lo12-redistribute-connected
+[2026-03-05 18:59:24] HEAD | ip address 12.12.11.11 255.255.255.0
+[2026-03-05 18:59:24] HEAD | exit
+[2026-03-05 18:59:24] HEAD | end
+[2026-03-05 18:59:24] HEAD | write memory
+[2026-03-05 18:59:47] BODY | hostname BODY
+[2026-03-05 18:59:47] BODY | no ip domain-lookup
+[2026-03-05 18:59:47] BODY | line con 0
+[2026-03-05 18:59:47] BODY | exec-timeout 60 0
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | line vty 0 15
+[2026-03-05 18:59:47] BODY | exec-timeout 60 0
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | ip routing
+[2026-03-05 18:59:47] BODY | vlan 12
+[2026-03-05 18:59:47] BODY | name BLUE-Vlan12
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | vlan 21
+[2026-03-05 18:59:47] BODY | name BLUE-Vlan21
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | vlan 23
+[2026-03-05 18:59:47] BODY | name BLUE-Vlan23
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | vlan 14
+[2026-03-05 18:59:47] BODY | name GREEN-Vlan14
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | vlan 41
+[2026-03-05 18:59:47] BODY | name GREEN-Vlan41
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | vlan 45
+[2026-03-05 18:59:47] BODY | name GREEN-Vlan45
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | vrf definition blue
+[2026-03-05 18:59:47] BODY | address-family ipv4
+[2026-03-05 18:59:47] BODY | exit-address-family
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | vrf definition green
+[2026-03-05 18:59:47] BODY | address-family ipv4
+[2026-03-05 18:59:47] BODY | exit-address-family
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface GigabitEthernet1/0/1
+[2026-03-05 18:59:47] BODY | description TRUNK-to-HEAD
+[2026-03-05 18:59:47] BODY | switchport trunk encapsulation dot1q
+[2026-03-05 18:59:47] BODY | switchport mode trunk
+[2026-03-05 18:59:47] BODY | switchport trunk allowed vlan 12,14,21,41
+[2026-03-05 18:59:47] BODY | no shutdown
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface GigabitEthernet1/0/2
+[2026-03-05 18:59:47] BODY | description TRUNK-to-TAIL
+[2026-03-05 18:59:47] BODY | switchport trunk encapsulation dot1q
+[2026-03-05 18:59:47] BODY | switchport mode trunk
+[2026-03-05 18:59:47] BODY | switchport trunk allowed vlan 23,45
+[2026-03-05 18:59:47] BODY | no shutdown
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface Vlan12
+[2026-03-05 18:59:47] BODY | description BLUE-to-HEAD
+[2026-03-05 18:59:47] BODY | vrf forwarding blue
+[2026-03-05 18:59:47] BODY | ip address 192.168.12.2 255.255.255.0
+[2026-03-05 18:59:47] BODY | no shutdown
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface Vlan21
+[2026-03-05 18:59:47] BODY | description BLUE-to-HEAD
+[2026-03-05 18:59:47] BODY | vrf forwarding blue
+[2026-03-05 18:59:47] BODY | ip address 192.168.21.2 255.255.255.0
+[2026-03-05 18:59:47] BODY | no shutdown
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface Vlan23
+[2026-03-05 18:59:47] BODY | description BLUE-to-TAIL
+[2026-03-05 18:59:47] BODY | vrf forwarding blue
+[2026-03-05 18:59:47] BODY | ip address 192.168.23.2 255.255.255.0
+[2026-03-05 18:59:47] BODY | no shutdown
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface Vlan14
+[2026-03-05 18:59:47] BODY | description GREEN-to-HEAD
+[2026-03-05 18:59:47] BODY | vrf forwarding green
+[2026-03-05 18:59:47] BODY | ip address 172.16.14.4 255.255.255.0
+[2026-03-05 18:59:47] BODY | no shutdown
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface Vlan41
+[2026-03-05 18:59:47] BODY | description GREEN-to-HEAD
+[2026-03-05 18:59:47] BODY | vrf forwarding green
+[2026-03-05 18:59:47] BODY | ip address 172.16.41.4 255.255.255.0
+[2026-03-05 18:59:47] BODY | no shutdown
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface Vlan45
+[2026-03-05 18:59:47] BODY | description GREEN-to-TAIL
+[2026-03-05 18:59:47] BODY | vrf forwarding green
+[2026-03-05 18:59:47] BODY | ip address 172.16.45.4 255.255.255.0
+[2026-03-05 18:59:47] BODY | no shutdown
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface Loopback2
+[2026-03-05 18:59:47] BODY | description Loo2-BLUE
+[2026-03-05 18:59:47] BODY | vrf forwarding blue
+[2026-03-05 18:59:47] BODY | ip address 192.168.2.2 255.255.255.255
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | interface Loopback4
+[2026-03-05 18:59:47] BODY | description Lo4-GREEN
+[2026-03-05 18:59:47] BODY | vrf forwarding green
+[2026-03-05 18:59:47] BODY | ip address 172.16.4.4 255.255.255.255
+[2026-03-05 18:59:47] BODY | exit
+[2026-03-05 18:59:47] BODY | end
+[2026-03-05 18:59:47] BODY | write memory
+[2026-03-05 18:59:59] BODY | no ip domain lookup
+[2026-03-05 18:59:59] BODY | end
+[2026-03-05 18:59:59] BODY | write memory
+[2026-03-05 19:00:11] TAIL | hostname TAIL
+[2026-03-05 19:00:11] TAIL | no ip domain lookup
+[2026-03-05 19:00:11] TAIL | line con 0
+[2026-03-05 19:00:11] TAIL | exec-timeout 60 0
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | line vty 0 15
+[2026-03-05 19:00:11] TAIL | exec-timeout 60 0
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | ip routing
+[2026-03-05 19:00:11] TAIL | vlan 23
+[2026-03-05 19:00:11] TAIL | name BLUE-Vlan23
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | vlan 45
+[2026-03-05 19:00:11] TAIL | name GREEN-Vlan45
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | vrf definition blue
+[2026-03-05 19:00:11] TAIL | address-family ipv4
+[2026-03-05 19:00:11] TAIL | exit-address-family
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | vrf definition green
+[2026-03-05 19:00:11] TAIL | address-family ipv4
+[2026-03-05 19:00:11] TAIL | exit-address-family
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | interface GigabitEthernet1/0/1
+[2026-03-05 19:00:11] TAIL | description TRUNK-to-BODY
+[2026-03-05 19:00:11] TAIL | switchport mode trunk
+[2026-03-05 19:00:11] TAIL | switchport trunk allowed vlan 23,45
+[2026-03-05 19:00:11] TAIL | no shutdown
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | interface Vlan23
+[2026-03-05 19:00:11] TAIL | description BLUE-to-BODY
+[2026-03-05 19:00:11] TAIL | vrf forwarding blue
+[2026-03-05 19:00:11] TAIL | ip address 192.168.23.3 255.255.255.0
+[2026-03-05 19:00:11] TAIL | no shutdown
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | interface Vlan45
+[2026-03-05 19:00:11] TAIL | description GREEN-to-BODY
+[2026-03-05 19:00:11] TAIL | vrf forwarding green
+[2026-03-05 19:00:11] TAIL | ip address 172.16.45.5 255.255.255.0
+[2026-03-05 19:00:11] TAIL | no shutdown
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | interface Loopback3
+[2026-03-05 19:00:11] TAIL | description Loo3-BLUE
+[2026-03-05 19:00:11] TAIL | vrf forwarding blue
+[2026-03-05 19:00:11] TAIL | ip address 192.168.3.3 255.255.255.255
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | interface Loopback5
+[2026-03-05 19:00:11] TAIL | description Loo5-GREEN
+[2026-03-05 19:00:11] TAIL | vrf forwarding green
+[2026-03-05 19:00:11] TAIL | ip address 172.16.5.5 255.255.255.255
+[2026-03-05 19:00:11] TAIL | exit
+[2026-03-05 19:00:11] TAIL | end
+[2026-03-05 19:00:11] TAIL | write memory
+[2026-03-05 19:03:01] BODY | ip route vrf blue 192.168.0.0 255.255.0.0 Null0
+[2026-03-05 19:03:01] BODY | ip route vrf blue 193.10.203.11 255.255.255.255 192.168.12.1
+[2026-03-05 19:03:01] BODY | ip route vrf blue 193.10.203.11 255.255.255.255 192.168.21.1
+[2026-03-05 19:03:01] BODY | ip route vrf green 172.16.0.0 255.240.0.0 Null0
+[2026-03-05 19:03:01] BODY | router ospf 1 vrf blue
+[2026-03-05 19:03:01] BODY | router-id 2.2.2.2
+[2026-03-05 19:03:01] BODY | network 192.168.23.0 0.0.0.255 area 0
+[2026-03-05 19:03:01] BODY | network 192.168.2.2 0.0.0.0 area 0
+[2026-03-05 19:03:01] BODY | redistribute bgp 65001 subnets
+[2026-03-05 19:03:01] BODY | exit
+[2026-03-05 19:03:01] BODY | router eigrp GREEN
+[2026-03-05 19:03:01] BODY | address-family ipv4 vrf green autonomous-system 1
+[2026-03-05 19:03:01] BODY | eigrp router-id 4.4.4.4
+[2026-03-05 19:03:01] BODY | network 172.16.45.0 0.0.0.255
+[2026-03-05 19:03:01] BODY | network 172.16.4.4 0.0.0.0
+[2026-03-05 19:03:01] BODY | redistribute bgp 65001 metric 1000000 1 255 1 1500
+[2026-03-05 19:03:01] BODY | exit-address-family
+[2026-03-05 19:03:02] BODY | exit
+[2026-03-05 19:03:02] BODY | end
+[2026-03-05 19:03:02] BODY | write memory
+[2026-03-05 19:03:09] BODY | router eigrp GREEN
+[2026-03-05 19:03:09] BODY | address-family ipv4 vrf green autonomous-system 1
+[2026-03-05 19:03:09] BODY | topology base
+[2026-03-05 19:03:09] BODY | redistribute bgp 65001 metric 1000000 1 255 1 1500
+[2026-03-05 19:03:09] BODY | exit-af-topology
+[2026-03-05 19:03:09] BODY | exit-address-family
+[2026-03-05 19:03:09] BODY | exit
+[2026-03-05 19:03:09] BODY | end
+[2026-03-05 19:03:09] BODY | write memory
+[2026-03-05 19:03:16] TAIL | router ospf 1 vrf blue
+[2026-03-05 19:03:16] TAIL | router-id 3.3.3.3
+[2026-03-05 19:03:16] TAIL | network 192.168.23.0 0.0.0.255 area 0
+[2026-03-05 19:03:16] TAIL | network 192.168.3.3 0.0.0.0 area 0
+[2026-03-05 19:03:16] TAIL | exit
+[2026-03-05 19:03:16] TAIL | router eigrp GREEN
+[2026-03-05 19:03:16] TAIL | address-family ipv4 vrf green autonomous-system 1
+[2026-03-05 19:03:16] TAIL | eigrp router-id 5.5.5.5
+[2026-03-05 19:03:16] TAIL | network 172.16.45.0 0.0.0.255
+[2026-03-05 19:03:16] TAIL | network 172.16.5.5 0.0.0.0
+[2026-03-05 19:03:16] TAIL | eigrp stub connected
+[2026-03-05 19:03:16] TAIL | exit-address-family
+[2026-03-05 19:03:16] TAIL | exit
+[2026-03-05 19:03:16] TAIL | end
+[2026-03-05 19:03:16] TAIL | write memory
+[2026-03-05 19:03:54] BODY | do clear ip ospf process
+[2026-03-05 19:03:54] BODY | yes
+[2026-03-05 19:04:03] TAIL | do clear ip ospf process
+[2026-03-05 19:04:03] TAIL | yes
+[2026-03-05 19:04:29] BODY | interface Vlan23
+[2026-03-05 19:04:29] BODY | ip ospf network point-to-point
+[2026-03-05 19:04:29] BODY | exit
+[2026-03-05 19:04:29] BODY | end
+[2026-03-05 19:04:29] BODY | write memory
+[2026-03-05 19:04:35] TAIL | interface Vlan23
+[2026-03-05 19:04:35] TAIL | ip ospf network point-to-point
+[2026-03-05 19:04:35] TAIL | exit
+[2026-03-05 19:04:35] TAIL | end
+[2026-03-05 19:04:35] TAIL | write memory
+[2026-03-05 19:06:34] HEAD | ip prefix-list REDIST-CONNECTED seq 5 permit 12.12.11.0/24
+[2026-03-05 19:06:34] HEAD | ip prefix-list REDIST-CONNECTED seq 10 deny 0.0.0.0/0 le 32
+[2026-03-05 19:06:34] HEAD | router bgp 100
+[2026-03-05 19:06:34] HEAD | bgp router-id 1.1.1.1
+[2026-03-05 19:06:34] HEAD | no bgp default ipv4-unicast
+[2026-03-05 19:06:34] HEAD | neighbor 192.168.12.2 remote-as 100
+[2026-03-05 19:06:34] HEAD | neighbor 192.168.12.2 description BLUE-BODY-iBGP-vlan12
+[2026-03-05 19:06:34] HEAD | neighbor 192.168.21.2 remote-as 100
+[2026-03-05 19:06:34] HEAD | neighbor 192.168.21.2 description BLUE-BODY-iBGP-vlan21
+[2026-03-05 19:06:34] HEAD | neighbor 172.16.14.4 remote-as 200
+[2026-03-05 19:06:34] HEAD | neighbor 172.16.14.4 description GREEN-BODY-eBGP-vlan14
+[2026-03-05 19:06:34] HEAD | neighbor 172.16.41.4 remote-as 200
+[2026-03-05 19:06:34] HEAD | neighbor 172.16.41.4 description GREEN-BODY-eBGP-vlan41
+[2026-03-05 19:06:34] HEAD | address-family ipv4 unicast
+[2026-03-05 19:06:34] HEAD | neighbor 192.168.12.2 activate
+[2026-03-05 19:06:34] HEAD | neighbor 192.168.21.2 activate
+[2026-03-05 19:06:34] HEAD | neighbor 172.16.14.4 activate
+[2026-03-05 19:06:34] HEAD | neighbor 172.16.41.4 activate
+[2026-03-05 19:06:34] HEAD | network 8.8.8.0 mask 255.255.255.0
+[2026-03-05 19:06:34] HEAD | redistribute connected route-map REDIST-CONN
+[2026-03-05 19:06:34] HEAD | exit-address-family
+[2026-03-05 19:06:34] HEAD | exit
+[2026-03-05 19:06:34] HEAD | route-map REDIST-CONN permit 10
+[2026-03-05 19:06:34] HEAD | match ip address prefix-list REDIST-CONNECTED
+[2026-03-05 19:06:34] HEAD | exit
+[2026-03-05 19:06:34] HEAD | end
+[2026-03-05 19:06:34] HEAD | write memory
+[2026-03-05 19:06:52] BODY | router bgp 65001
+[2026-03-05 19:06:52] BODY | bgp router-id 2.2.2.2
+[2026-03-05 19:06:52] BODY | no bgp default ipv4-unicast
+[2026-03-05 19:06:52] BODY | address-family ipv4 vrf blue
+[2026-03-05 19:06:52] BODY | neighbor 192.168.12.1 remote-as 100
+[2026-03-05 19:06:52] BODY | neighbor 192.168.12.1 description BLUE-HEAD-iBGP-vlan12
+[2026-03-05 19:06:52] BODY | neighbor 192.168.12.1 local-as 100
+[2026-03-05 19:06:52] BODY | neighbor 192.168.12.1 activate
+[2026-03-05 19:06:52] BODY | neighbor 192.168.21.1 remote-as 100
+[2026-03-05 19:06:52] BODY | neighbor 192.168.21.1 description BLUE-HEAD-iBGP-vlan21
+[2026-03-05 19:06:52] BODY | neighbor 192.168.21.1 local-as 100
+[2026-03-05 19:06:52] BODY | neighbor 192.168.21.1 activate
+[2026-03-05 19:06:52] BODY | network 192.168.0.0
+[2026-03-05 19:06:52] BODY | exit-address-family
+[2026-03-05 19:06:52] BODY | address-family ipv4 vrf green
+[2026-03-05 19:06:52] BODY | neighbor 172.16.14.1 remote-as 100
+[2026-03-05 19:06:52] BODY | neighbor 172.16.14.1 description GREEN-HEAD-eBGP-vlan14
+[2026-03-05 19:06:52] BODY | neighbor 172.16.14.1 local-as 200 no-prepend replace-as
+[2026-03-05 19:06:52] BODY | neighbor 172.16.14.1 activate
+[2026-03-05 19:06:52] BODY | neighbor 172.16.41.1 remote-as 100
+[2026-03-05 19:06:52] BODY | neighbor 172.16.41.1 description GREEN-HEAD-eBGP-vlan41
+[2026-03-05 19:06:52] BODY | neighbor 172.16.41.1 local-as 200 no-prepend replace-as
+[2026-03-05 19:06:52] BODY | neighbor 172.16.41.1 activate
+[2026-03-05 19:06:52] BODY | network 172.16.0.0
+[2026-03-05 19:06:52] BODY | neighbor 172.16.41.1 route-map SET-LP-PREFER41 in
+[2026-03-05 19:06:52] BODY | neighbor 172.16.14.1 route-map SET-MED-PREFER41 out
+[2026-03-05 19:06:52] BODY | neighbor 172.16.41.1 route-map SET-MED-PREFER41 out
+[2026-03-05 19:06:52] BODY | exit-address-family
+[2026-03-05 19:06:52] BODY | exit
+[2026-03-05 19:06:52] BODY | ip prefix-list ALL seq 5 permit 0.0.0.0/0 le 32
+[2026-03-05 19:06:52] BODY | route-map SET-LP-PREFER41 permit 10
+[2026-03-05 19:06:52] BODY | set local-preference 200
+[2026-03-05 19:06:52] BODY | exit
+[2026-03-05 19:06:52] BODY | route-map SET-MED-PREFER41 permit 10
+[2026-03-05 19:06:52] BODY | set metric 50
+[2026-03-05 19:06:52] BODY | exit
+[2026-03-05 19:06:52] BODY | end
+[2026-03-05 19:06:52] BODY | write memory
+[2026-03-05 19:07:00] BODY | vrf definition blue
+[2026-03-05 19:07:00] BODY | rd 100:1
+[2026-03-05 19:07:00] BODY | exit
+[2026-03-05 19:07:00] BODY | vrf definition green
+[2026-03-05 19:07:00] BODY | rd 200:1
+[2026-03-05 19:07:00] BODY | exit
+[2026-03-05 19:07:00] BODY | end
+[2026-03-05 19:07:00] BODY | write memory
+[2026-03-05 19:07:05] TAIL | vrf definition blue
+[2026-03-05 19:07:05] TAIL | rd 100:1
+[2026-03-05 19:07:05] TAIL | exit
+[2026-03-05 19:07:05] TAIL | vrf definition green
+[2026-03-05 19:07:05] TAIL | rd 200:1
+[2026-03-05 19:07:05] TAIL | exit
+[2026-03-05 19:07:05] TAIL | end
+[2026-03-05 19:07:05] TAIL | write memory
+[2026-03-05 19:07:11] BODY | no router bgp 65001
+[2026-03-05 19:07:11] BODY | end
+[2026-03-05 19:07:20] BODY | router bgp 65001
+[2026-03-05 19:07:20] BODY | bgp router-id 2.2.2.2
+[2026-03-05 19:07:20] BODY | no bgp default ipv4-unicast
+[2026-03-05 19:07:20] BODY | address-family ipv4 vrf blue
+[2026-03-05 19:07:20] BODY | neighbor 192.168.12.1 remote-as 100
+[2026-03-05 19:07:20] BODY | neighbor 192.168.12.1 description BLUE-HEAD-iBGP-vlan12
+[2026-03-05 19:07:20] BODY | neighbor 192.168.12.1 local-as 100
+[2026-03-05 19:07:20] BODY | neighbor 192.168.12.1 activate
+[2026-03-05 19:07:20] BODY | neighbor 192.168.21.1 remote-as 100
+[2026-03-05 19:07:20] BODY | neighbor 192.168.21.1 description BLUE-HEAD-iBGP-vlan21
+[2026-03-05 19:07:20] BODY | neighbor 192.168.21.1 local-as 100
+[2026-03-05 19:07:20] BODY | neighbor 192.168.21.1 activate
+[2026-03-05 19:07:20] BODY | network 192.168.0.0
+[2026-03-05 19:07:20] BODY | exit-address-family
+[2026-03-05 19:07:20] BODY | address-family ipv4 vrf green
+[2026-03-05 19:07:20] BODY | neighbor 172.16.14.1 remote-as 100
+[2026-03-05 19:07:20] BODY | neighbor 172.16.14.1 description GREEN-HEAD-eBGP-vlan14
+[2026-03-05 19:07:20] BODY | neighbor 172.16.14.1 local-as 200 no-prepend replace-as
+[2026-03-05 19:07:20] BODY | neighbor 172.16.14.1 activate
+[2026-03-05 19:07:20] BODY | neighbor 172.16.41.1 remote-as 100
+[2026-03-05 19:07:20] BODY | neighbor 172.16.41.1 description GREEN-HEAD-eBGP-vlan41
+[2026-03-05 19:07:20] BODY | neighbor 172.16.41.1 local-as 200 no-prepend replace-as
+[2026-03-05 19:07:20] BODY | neighbor 172.16.41.1 activate
+[2026-03-05 19:07:20] BODY | network 172.16.0.0
+[2026-03-05 19:07:20] BODY | neighbor 172.16.41.1 route-map SET-LP-PREFER41 in
+[2026-03-05 19:07:20] BODY | neighbor 172.16.14.1 route-map SET-MED-PREFER41 out
+[2026-03-05 19:07:20] BODY | neighbor 172.16.41.1 route-map SET-MED-PREFER41 out
+[2026-03-05 19:07:20] BODY | exit-address-family
+[2026-03-05 19:07:20] BODY | exit
+[2026-03-05 19:07:20] BODY | end
+[2026-03-05 19:07:20] BODY | write memory
+[2026-03-05 19:08:15] BODY | router bgp 65001
+[2026-03-05 19:08:15] BODY | address-family ipv4 vrf blue
+[2026-03-05 19:08:15] BODY | no network 192.168.0.0
+[2026-03-05 19:08:15] BODY | network 192.168.0.0 mask 255.255.0.0
+[2026-03-05 19:08:15] BODY | exit-address-family
+[2026-03-05 19:08:15] BODY | address-family ipv4 vrf green
+[2026-03-05 19:08:15] BODY | no network 172.16.0.0
+[2026-03-05 19:08:15] BODY | network 172.16.0.0 mask 255.255.0.0
+[2026-03-05 19:08:15] BODY | exit-address-family
+[2026-03-05 19:08:15] BODY | exit
+[2026-03-05 19:08:15] BODY | end
+[2026-03-05 19:08:15] BODY | write memory
+[2026-03-05 19:08:22] BODY | no ip route vrf green 172.16.0.0 255.240.0.0 Null0
+[2026-03-05 19:08:22] BODY | ip route vrf green 172.16.0.0 255.255.0.0 Null0
+[2026-03-05 19:08:22] BODY | end
+[2026-03-05 19:08:22] BODY | write memory
+[2026-03-05 19:08:55] BODY | route-map SET-MED-HIGH permit 10
+[2026-03-05 19:08:55] BODY | set metric 100
+[2026-03-05 19:08:55] BODY | exit
+[2026-03-05 19:08:55] BODY | router bgp 65001
+[2026-03-05 19:08:55] BODY | address-family ipv4 vrf green
+[2026-03-05 19:08:55] BODY | neighbor 172.16.14.1 route-map SET-MED-HIGH out
+[2026-03-05 19:08:55] BODY | neighbor 172.16.41.1 route-map SET-MED-LOW out
+[2026-03-05 19:08:55] BODY | exit-address-family
+[2026-03-05 19:08:55] BODY | exit
+[2026-03-05 19:08:55] BODY | route-map SET-MED-LOW permit 10
+[2026-03-05 19:08:55] BODY | set metric 50
+[2026-03-05 19:08:55] BODY | exit
+[2026-03-05 19:08:55] BODY | end
+[2026-03-05 19:08:55] BODY | write memory
+[2026-03-05 19:09:01] BODY | do clear ip bgp * vrf green soft out
+[2026-03-05 19:15:14] BODY | router ospf 1 vrf blue
+[2026-03-05 19:15:14] BODY | redistribute bgp 65001 subnets
+[2026-03-05 19:15:14] BODY | exit
+[2026-03-05 19:15:14] BODY | router eigrp GREEN
+[2026-03-05 19:15:14] BODY | address-family ipv4 vrf green autonomous-system 1
+[2026-03-05 19:15:14] BODY | topology base
+[2026-03-05 19:15:14] BODY | redistribute bgp 65001 metric 1000000 1 255 1 1500
+[2026-03-05 19:15:14] BODY | exit-af-topology
+[2026-03-05 19:15:14] BODY | exit-address-family
+[2026-03-05 19:15:14] BODY | exit
+[2026-03-05 19:15:14] BODY | end
+[2026-03-05 19:15:14] BODY | write memory
+[2026-03-05 19:15:47] TAIL | router ospf 1 vrf blue
+[2026-03-05 19:15:47] TAIL | capability vrf-lite
+[2026-03-05 19:15:47] TAIL | exit
+[2026-03-05 19:15:47] TAIL | end
+[2026-03-05 19:15:47] TAIL | write memory
+[2026-03-05 19:15:52] BODY | router ospf 1 vrf blue
+[2026-03-05 19:15:52] BODY | capability vrf-lite
+[2026-03-05 19:15:52] BODY | exit
+[2026-03-05 19:15:52] BODY | end
+[2026-03-05 19:15:52] BODY | write memory
+[2026-03-05 19:22:15] HEAD | router bgp 100
+[2026-03-05 19:22:15] HEAD | address-family ipv4 unicast
+[2026-03-05 19:22:15] HEAD | neighbor 192.168.12.2 next-hop-self
+[2026-03-05 19:22:15] HEAD | neighbor 192.168.21.2 next-hop-self
+[2026-03-05 19:22:15] HEAD | exit-address-family
+[2026-03-05 19:22:15] HEAD | exit
+[2026-03-05 19:22:15] HEAD | end
+[2026-03-05 19:22:15] HEAD | write memory
+[2026-03-05 19:22:26] HEAD | do clear ip bgp * soft
+[2026-03-05 19:23:28] HEAD | router bgp 100
+[2026-03-05 19:23:28] HEAD | address-family ipv4 unicast
+[2026-03-05 19:23:28] HEAD | maximum-paths ibgp 2
+[2026-03-05 19:23:28] HEAD | exit-address-family
+[2026-03-05 19:23:28] HEAD | exit
+[2026-03-05 19:23:28] HEAD | end
+[2026-03-05 19:23:28] HEAD | write memory
+[2026-03-05 19:23:43] HEAD | router bgp 100
+[2026-03-05 19:23:43] HEAD | address-family ipv4 unicast
+[2026-03-05 19:23:43] HEAD | maximum-paths 2
+[2026-03-05 19:23:43] HEAD | exit-address-family
+[2026-03-05 19:23:43] HEAD | exit
+[2026-03-05 19:23:43] HEAD | end
+[2026-03-05 19:23:43] HEAD | write memory
+[2026-03-05 19:25:00] === CCNP SKILLS EXAM CONFIGURATION COMPLETE ===
+[2026-03-05 19:25:00] ALL CHECKPOINTS A-E PASSED
+[2026-03-05 19:25:00] ALL CONFIGS SAVED TO NVRAM
