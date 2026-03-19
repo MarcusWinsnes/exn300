@@ -1,0 +1,37 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[2026-03-03 20:40:25] SW1 | erase startup-config
+[2026-03-03 20:40:25] SW1 | delete vlan.dat
+[2026-03-03 20:40:25] SW1 | reload
+[2026-03-03 20:41:12] R1 | erase startup-config
+[2026-03-03 20:41:12] R1 | reload
+[2026-03-03 20:46:43] SW1 | vlan 10 / name PC1_VLAN
+[2026-03-03 20:46:43] SW1 | vlan 20 / name PC2_VLAN
+[2026-03-03 20:46:43] SW1 | interface Gi1/0/2 switchport mode access / switchport access vlan 10
+[2026-03-03 20:46:44] SW1 | interface Gi1/0/3 switchport mode access / switchport access vlan 20
+[2026-03-03 20:46:44] SW1 | interface Gi1/0/1 switchport mode trunk
+[2026-03-03 20:47:53] SW1 | configure terminal
+[2026-03-03 20:47:53] SW1 | vlan 10 / name PC1_VLAN
+[2026-03-03 20:47:53] SW1 | vlan 20 / name PC2_VLAN
+[2026-03-03 20:47:53] SW1 | interface Gi1/0/2 - switchport mode access / switchport access vlan 10
+[2026-03-03 20:47:53] SW1 | interface Gi1/0/3 - switchport mode access / switchport access vlan 20
+[2026-03-03 20:47:53] SW1 | interface Gi1/0/1 - switchport mode trunk / switchport trunk allowed vlan 10,20
+[2026-03-03 20:47:53] SW1 | VERIFIED: VLANs 10,20 created, trunk operational on Gi1/0/1
+[2026-03-03 20:48:14] R1 | interface GigabitEthernet0/0/0 - no ip address / no shutdown
+[2026-03-03 20:48:14] R1 | interface GigabitEthernet0/0/0.10 - encapsulation dot1Q 10 / ip address 192.168.0.1 255.255.255.0
+[2026-03-03 20:48:14] R1 | interface GigabitEthernet0/0/0.20 - encapsulation dot1Q 20 / ip address 192.168.1.1 255.255.255.0
+[2026-03-03 20:48:14] R1 | VERIFIED: Sub-interfaces up - Gi0/0/0.10=192.168.0.1, Gi0/0/0.20=192.168.1.1
+[2026-03-03 20:48:36] R1 | write memory - SAVED
+[2026-03-03 20:48:36] SW1 | write memory - SAVED
+[2026-03-03 20:49:12] R1 | show ip interface brief - VERIFIED sub-interfaces UP
+[2026-03-03 20:49:12] R1 | ping 192.168.0.99 - SUCCESS 3/3
+[2026-03-03 20:49:12] R1 | ping 192.168.1.99 - SUCCESS 3/3
+[2026-03-03 20:49:12] R1 | ping 192.168.1.99 source 192.168.0.1 - SUCCESS 3/3 (inter-VLAN routing verified)
+[2026-03-03 20:49:12] TASK COMPLETE | Mätbart mål 1 - Basic configuration done, inter-VLAN routing operational

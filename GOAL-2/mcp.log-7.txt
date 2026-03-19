@@ -1,0 +1,23 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[2026-03-03 20:55:58] SW1 | configure terminal
+[2026-03-03 20:55:58] SW1 | vlan 20
+[2026-03-03 20:55:58] SW1 | name PC2_VLAN
+[2026-03-03 20:55:58] SW1 | interface GigabitEthernet1/0/3
+[2026-03-03 20:55:58] SW1 | switchport access vlan 20
+[2026-03-03 20:55:58] SW1 | write memory
+[2026-03-03 20:55:58] R1 | configure terminal
+[2026-03-03 20:55:58] R1 | interface GigabitEthernet0/0/0.10
+[2026-03-03 20:55:58] R1 | ip address 192.168.0.1 255.255.255.0
+[2026-03-03 20:55:58] R1 | interface GigabitEthernet0/0/0.20
+[2026-03-03 20:55:58] R1 | no ip access-group NO-CLANKERS-ALLOWED out
+[2026-03-03 20:55:58] R1 | no ip access-list standard NO-CLANKERS-ALLOWED
+[2026-03-03 20:55:58] R1 | write memory
+[2026-03-03 20:56:19] VERIFICATION | All fixes applied and verified - ping between PCs should now work

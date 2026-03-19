@@ -1,0 +1,16 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[] DIAGNOSIS | R1 Gi0/0/0.10 subnet /26 too small for PC1 .99, ACL blocks PC1, SW1 Gi1/0/3 in VLAN30 not VLAN20
+[2026-03-04 17:22:19] R1 | interface GigabitEthernet0/0/0.10
+[2026-03-04 17:22:19] R1 | ip address 192.168.0.1 255.255.255.0
+[2026-03-04 17:22:19] R1 | no ip access-list standard NO-CLANKERS-ALLOWED
+[2026-03-04 17:22:19] R1 | no ip access-group NO-CLANKERS-ALLOWED out (on Gi0/0/0.20)
+[2026-03-04 17:22:33] SW1 | interface GigabitEthernet1/0/3
+[2026-03-04 17:22:33] SW1 | switchport access vlan 20

@@ -1,0 +1,44 @@
+═══════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═══════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═══════════════════════════════════════════════════════════════════════════════
+
+[2026-03-03 17:39:23] R1 | show ip interface brief
+[2026-03-03 17:39:23] R1 | show cdp neighbors
+[2026-03-03 17:39:23] R1 | show cdp neighbors detail
+[2026-03-03 17:39:23] R1 | interface Gi0/0/0 - no shutdown
+[2026-03-03 17:39:23] R1 | interface Gi0/0/0 - no ip address
+[2026-03-03 17:39:23] R1 | interface Gi0/0/0.10 - encapsulation dot1Q 10
+[2026-03-03 17:39:23] R1 | interface Gi0/0/0.10 - ip address 192.168.0.1 255.255.255.0
+[2026-03-03 17:39:23] R1 | interface Gi0/0/0.20 - encapsulation dot1Q 20
+[2026-03-03 17:39:23] R1 | interface Gi0/0/0.20 - ip address 192.168.1.1 255.255.255.0
+[2026-03-03 17:39:23] R1 | banner motd # Authorized Access Only #
+[2026-03-03 17:39:23] R1 | service password-encryption
+[2026-03-03 17:39:23] R1 | no ip domain-lookup
+[2026-03-03 17:39:23] R1 | write memory
+[2026-03-03 17:39:23] SW1 | show ip interface brief
+[2026-03-03 17:39:23] SW1 | show vlan brief
+[2026-03-03 17:39:23] SW1 | show mac address-table
+[2026-03-03 17:39:23] SW1 | show cdp neighbors detail
+[2026-03-03 17:39:23] SW1 | show interfaces status
+[2026-03-03 17:39:23] SW1 | vlan 10 - name PC1-NET
+[2026-03-03 17:39:23] SW1 | vlan 20 - name PC2-NET
+[2026-03-03 17:39:23] SW1 | interface Gi1/0/2 - switchport mode access
+[2026-03-03 17:39:23] SW1 | interface Gi1/0/2 - switchport access vlan 10
+[2026-03-03 17:39:23] SW1 | interface Gi1/0/3 - switchport mode access
+[2026-03-03 17:39:23] SW1 | interface Gi1/0/3 - switchport access vlan 20
+[2026-03-03 17:39:23] SW1 | interface Gi1/0/1 - switchport mode trunk
+[2026-03-03 17:39:23] SW1 | interface Gi1/0/1 - switchport trunk allowed vlan 10,20
+[2026-03-03 17:39:23] SW1 | banner motd # Authorized Access Only #
+[2026-03-03 17:39:23] SW1 | service password-encryption
+[2026-03-03 17:39:23] SW1 | no ip domain-lookup
+[2026-03-03 17:39:23] SW1 | write memory
+[2026-03-03 17:39:23] R1 | VERIFY: ping 192.168.0.99 - SUCCESS (4/5)
+[2026-03-03 17:39:23] R1 | VERIFY: ping 192.168.1.99 - SUCCESS (5/5)
+[2026-03-03 17:39:23] R1 | VERIFY: show arp - Both PCs resolved
+[2026-03-03 17:39:23] R1 | VERIFY: show ip route - 192.168.0.0/24 and 192.168.1.0/24 connected
+--- OBJECTIVE 1 COMPLETE ---

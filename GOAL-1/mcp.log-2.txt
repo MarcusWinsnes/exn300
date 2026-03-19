@@ -1,0 +1,24 @@
+═══════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═══════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═══════════════════════════════════════════════════════════════════════════════
+
+[] SYSTEM | === MÄTBART MÅL 1 - TASK 1 START ===
+[] SYSTEM | Plan: Configure inter-VLAN routing (router-on-a-stick) between PC1 (192.168.0.99/VLAN10) and PC2 (192.168.1.99/VLAN20)
+[2026-03-03 18:33:56] SW1 | hostname SW1
+[2026-03-03 18:33:56] SW1 | vlan 10 - name PC1-SUBNET
+[2026-03-03 18:33:56] SW1 | vlan 20 - name PC2-SUBNET
+[2026-03-03 18:33:56] SW1 | interface Gi1/0/2 - switchport mode access - switchport access vlan 10
+[2026-03-03 18:33:56] SW1 | interface Gi1/0/3 - switchport mode access - switchport access vlan 20
+[2026-03-03 18:33:56] SW1 | interface Gi1/0/1 - switchport trunk encapsulation dot1q - switchport mode trunk - trunk allowed vlan 10,20
+[2026-03-03 18:34:21] R1 | hostname R1
+[2026-03-03 18:34:21] R1 | interface Gi0/0/0 - no ip address - no shutdown
+[2026-03-03 18:34:21] R1 | interface Gi0/0/0.10 - encapsulation dot1Q 10 - ip address 192.168.0.1 255.255.255.0
+[2026-03-03 18:34:21] R1 | interface Gi0/0/0.20 - encapsulation dot1Q 20 - ip address 192.168.1.1 255.255.255.0
+[2026-03-03 18:35:01] R1 | write memory
+[2026-03-03 18:35:03] SW1 | write memory
+[2026-03-03 18:35:03] SYSTEM | === MÄTBART MÅL 1 - TASK 1 COMPLETE ===

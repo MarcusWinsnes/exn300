@@ -1,0 +1,32 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[2026-03-03 19:32:49] === MEASURABLE GOAL 1: AI-driven Cisco config START ===
+[2026-03-03 19:33:19] SW1 | configure terminal
+[2026-03-03 19:33:19] SW1 | hostname SW1
+[2026-03-03 19:33:19] SW1 | banner motd
+[2026-03-03 19:33:19] SW1 | vlan 10 / name SUBNET-0
+[2026-03-03 19:33:19] SW1 | vlan 20 / name SUBNET-1
+[2026-03-03 19:33:19] SW1 | interface Gi1/0/1 | description TRUNK-TO-R1 | switchport trunk encapsulation dot1q | switchport mode trunk | switchport trunk allowed vlan 10,20 | no shutdown
+[2026-03-03 19:33:19] SW1 | interface Gi1/0/2 | description PC1-VLAN10 | switchport mode access | switchport access vlan 10 | no shutdown
+[2026-03-03 19:33:19] SW1 | interface Gi1/0/3 | description PC2-VLAN20 | switchport mode access | switchport access vlan 20 | no shutdown
+[2026-03-03 19:33:19] SW1 | end
+[2026-03-03 19:36:25] R1 | configure terminal
+[2026-03-03 19:36:25] R1 | hostname R1
+[2026-03-03 19:36:25] R1 | banner motd
+[2026-03-03 19:36:25] R1 | interface Gi0/0/0 | no shutdown
+[2026-03-03 19:36:25] R1 | interface Gi0/0/0.10 | encapsulation dot1Q 10 | ip address 192.168.0.1 255.255.255.0
+[2026-03-03 19:36:25] R1 | interface Gi0/0/0.20 | encapsulation dot1Q 20 | ip address 192.168.1.1 255.255.255.0
+[2026-03-03 19:36:25] R1 | end
+[2026-03-03 19:36:55] R1 | write memory
+[2026-03-03 19:36:55] SW1 | write memory
+[2026-03-03 19:38:07] R1 | VERIFY: ping 192.168.0.1 = 5/5 SUCCESS
+[2026-03-03 19:38:07] R1 | VERIFY: ping 192.168.1.1 = 5/5 SUCCESS
+[2026-03-03 19:38:07] R1 | VERIFY: show ip route - both subnets connected
+[2026-03-03 19:38:07] === MEASURABLE GOAL 1: CONFIGURATION COMPLETE ===

@@ -1,0 +1,27 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[2026-03-03 19:25:25] R1 | interface GigabitEthernet0/0/0.10
+[2026-03-03 19:25:25] R1 | ip address 192.168.0.1 255.255.255.0
+[2026-03-03 19:25:25] R1 | no ip access-list standard NO-CLANKERS-ALLOWED
+[2026-03-03 19:25:25] R1 | ip access-list standard NO-CLANKERS-ALLOWED
+[2026-03-03 19:25:25] R1 | permit any
+[2026-03-03 19:25:25] R1 | interface GigabitEthernet0/0/0.20
+[2026-03-03 19:25:25] R1 | no ip access-group NO-CLANKERS-ALLOWED out
+[2026-03-03 19:25:25] R1 | show ip interface brief
+[2026-03-03 19:25:25] R1 | show access-lists
+[2026-03-03 19:25:52] SW1 | vlan 20
+[2026-03-03 19:25:52] SW1 | name PC2-SUBNET
+[2026-03-03 19:25:52] SW1 | no vlan 30
+[2026-03-03 19:25:52] SW1 | interface GigabitEthernet1/0/3
+[2026-03-03 19:25:52] SW1 | switchport access vlan 20
+[2026-03-03 19:25:52] SW1 | show vlan brief
+[2026-03-03 19:26:38] R1 | ping 192.168.0.99 - SUCCESS 5/5 (100%)
+[2026-03-03 19:26:38] R1 | ping 192.168.1.99 - SUCCESS 5/5 (100%)
+[2026-03-03 19:26:38] TASK2 | VERIFICATION COMPLETE - Inter-VLAN routing working

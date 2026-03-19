@@ -1,0 +1,19 @@
+═══════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═══════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═══════════════════════════════════════════════════════════════════════════════
+
+[2026-03-03 17:56:38] SW1 | interface GigabitEthernet1/0/3
+[2026-03-03 17:56:38] SW1 | switchport access vlan 20
+[2026-03-03 17:57:01] R1 | interface GigabitEthernet0/0/0.10
+[2026-03-03 17:57:01] R1 | ip address 192.168.0.1 255.255.255.0
+[2026-03-03 17:57:17] R1 | interface GigabitEthernet0/0/0.20
+[2026-03-03 17:57:17] R1 | no ip access-group NO-CLANKERS-ALLOWED out
+[2026-03-03 17:57:17] R1 | no ip access-list standard NO-CLANKERS-ALLOWED
+[2026-03-03 17:57:43] R1 | VERIFY: ping 192.168.0.99 - SUCCESS 3/3
+[2026-03-03 17:57:43] R1 | VERIFY: ping 192.168.1.99 - SUCCESS 3/3
+[2026-03-03 17:57:43] TASK 2 COMPLETE - Inter-VLAN routing restored

@@ -1,0 +1,30 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[2026-03-05 14:22:12] HEAD | Step 1 config pushed from /tmp/head_step1.cfg
+[2026-03-05 14:22:19] BODY | Step 1 config pushed from /tmp/body_step1.cfg
+[2026-03-05 14:22:24] TAIL | Step 1 config pushed from /tmp/tail_step1.cfg
+[] === STEP 1 COMPLETE: Base config, L2 trunks, VRFs, SVIs, Loopbacks ==
+[] HEAD | hostname, no ip domain-lookup, exec-timeout 60, subifs .12/.21/.14/.41, Lo8/Lo11/Lo12
+[] BODY | hostname, VRF blue+green, trunk Gi1/0/1+Gi1/0/2, VLANs 12/14/21/23/41/45, SVIs, Lo2+Lo4
+[] TAIL | hostname, VRF blue+green, trunk Gi1/0/1, VLANs 23/45, SVIs, Lo3+Lo5
+[] VERIFY | All interfaces up/up, L3 pings OK across all VLANs
+[2026-03-05 14:26:44] BODY | Step 1 config pushed from /tmp/body_step2.cfg
+[] === STEP 2 COMPLETE: Static Routes, OSPF blue, EIGRP green ==
+[] BODY | ip routing, static routes (192.168.0.0->Null0, 193.10.203.11 ECMP, 172.16.0.0->Null0)
+[] BODY | OSPF 1 vrf blue: area 0, redistribute bgp 65001, networks Lo2+Vlan23
+[] BODY | EIGRP GREEN vrf green: AS100, networks Vlan45+Lo4
+[] TAIL | ip routing, OSPF 1 vrf blue area 0, EIGRP GREEN vrf green stub connected
+[] VERIFY | OSPF FULL, EIGRP neighbor up, loopback-to-loopback pings 100%
+[] === STEP 3 COMPLETE: BGP, Path Manipulation, Final Verification ==
+[] HEAD | BGP AS100, network 8.8.8.0/24, redist connected w/prefix-list (Lo12 only), next-hop-self for iBGP, always-compare-med
+[] BODY | BGP AS65001, VRF blue: local-as 100 peer 193.10.203.11, VRF green: local-as 200 peers .14 and .41
+[] BODY | LP 200 on .41 inbound (REQ46), MED 100 on .41 out / MED 200 on .14 out (REQ47)
+[] BODY | Redist BGP into OSPF (blue) and EIGRP (green)
+[] VERIFY | All 5 checkpoints PASS, 193.10.203.11 NOT in BGP, configs saved

@@ -1,0 +1,31 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[] SYSTEM | Mätbart Mål 1 - Starting Cisco configuration task
+[2026-03-03 19:12:37] SW1 | === BEGIN VLAN & TRUNK CONFIGURATION ===
+[2026-03-03 19:13:06] SW1 | vlan 10
+[2026-03-03 19:13:06] SW1 | name PC1-SUBNET
+[2026-03-03 19:13:06] SW1 | vlan 20
+[2026-03-03 19:13:06] SW1 | name PC2-SUBNET
+[2026-03-03 19:13:06] SW1 | interface GigabitEthernet1/0/2 - switchport mode access
+[2026-03-03 19:13:06] SW1 | interface GigabitEthernet1/0/2 - switchport access vlan 10
+[2026-03-03 19:13:06] SW1 | interface GigabitEthernet1/0/3 - switchport mode access
+[2026-03-03 19:13:06] SW1 | interface GigabitEthernet1/0/3 - switchport access vlan 20
+[2026-03-03 19:13:06] SW1 | interface GigabitEthernet1/0/1 - switchport mode trunk
+[2026-03-03 19:13:06] SW1 | interface GigabitEthernet1/0/1 - switchport trunk allowed vlan 10,20
+[2026-03-03 19:13:33] R1 | interface GigabitEthernet0/0/0 - no shutdown
+[2026-03-03 19:13:33] R1 | interface GigabitEthernet0/0/0.10 - encapsulation dot1Q 10
+[2026-03-03 19:13:33] R1 | interface GigabitEthernet0/0/0.10 - ip address 192.168.0.1 255.255.255.0
+[2026-03-03 19:13:33] R1 | interface GigabitEthernet0/0/0.20 - encapsulation dot1Q 20
+[2026-03-03 19:13:33] R1 | interface GigabitEthernet0/0/0.20 - ip address 192.168.1.1 255.255.255.0
+[2026-03-03 19:14:25] R1 | write memory (config saved)
+[2026-03-03 19:14:25] R1 | VERIFICATION: ping 192.168.0.99 = 80% (4/5) SUCCESS
+[2026-03-03 19:14:25] R1 | VERIFICATION: ping 192.168.1.99 = 100% (5/5) SUCCESS
+[2026-03-03 19:14:25] SW1 | write memory (config saved)
+[2026-03-03 19:14:25] SYSTEM | === Mätbart Mål 1 COMPLETE ===

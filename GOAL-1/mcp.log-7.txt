@@ -1,0 +1,25 @@
+═════════════════════════════════════════════════════════════════════════════
+MCP-RELAY AUDIT LOG - CISCO DEVICE DISCOVERY & AUTHENTICATION
+═════════════════════════════════════════════════════════════════════════════
+Project: Generativ AI i Nätverksmiljö - Automatisering av Cisco-konfiguration
+Students: Marcus Winsnes, Tobias Nordström
+University: Högskolan Väst (University West)
+Program: NIT (Nätverksteknik och IT-säkerhet)
+═════════════════════════════════════════════════════════════════════════════
+
+[2026-03-03 20:28:03] TOPOLOGY ASSESSMENT
+[2026-03-03 20:29:29] SW1 | vlan 10 - name PC1-SUBNET
+[2026-03-03 20:29:29] SW1 | vlan 20 - name PC2-SUBNET
+[2026-03-03 20:29:29] SW1 | interface Gi1/0/2 - switchport mode access - switchport access vlan 10
+[2026-03-03 20:29:29] SW1 | interface Gi1/0/3 - switchport mode access - switchport access vlan 20
+[2026-03-03 20:29:29] SW1 | interface Gi1/0/1 - switchport mode trunk - trunk allowed vlan 10,20
+[2026-03-03 20:29:29] SW1 | write memory
+[2026-03-03 20:30:04] R1 | interface GigabitEthernet0/0/0 - no ip address - no shutdown
+[2026-03-03 20:30:04] R1 | interface GigabitEthernet0/0/0.10 - encapsulation dot1Q 10 - ip address 192.168.0.1 255.255.255.0
+[2026-03-03 20:30:04] R1 | interface GigabitEthernet0/0/0.20 - encapsulation dot1Q 20 - ip address 192.168.1.1 255.255.255.0
+[2026-03-03 20:30:04] R1 | write memory
+[2026-03-03 20:30:49] VERIFICATION | R1 ping 192.168.0.99 = SUCCESS (66%)
+[2026-03-03 20:30:49] VERIFICATION | R1 ping 192.168.1.99 = SUCCESS (100%)
+[2026-03-03 20:30:49] VERIFICATION | SW1 trunk Gi1/0/1 = trunking, VLANs 10,20 forwarding
+[2026-03-03 20:30:49] VERIFICATION | SW1 Gi1/0/2 = VLAN 10, Gi1/0/3 = VLAN 20
+[2026-03-03 20:30:49] TASK COMPLETE | Mätbart Mål 1 - Inter-VLAN routing configured
